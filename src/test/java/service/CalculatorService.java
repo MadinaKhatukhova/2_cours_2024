@@ -1,5 +1,5 @@
 
-package ru.skypro.Calculator;
+package service;
 public interface CalculatorService {
 
     Integer sum(Integer num, Integer num2);

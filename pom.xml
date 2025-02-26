@@ -1,5 +1,14 @@
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="" xmlns:xsi=""
+<project> xmlns="" xmlns:xsi=" "
 	xsi:schemaLocation="http://maven.apache.org/POM/2.6.3 https://maven.apache.org/xsd/maven-2.6.3.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
@@ -42,11 +51,7 @@
 			<artifactId>spring-boot-starter</artifactId>
 		</dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -58,4 +63,44 @@
 		</plugins>
 	</build>
 
-</project>
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-test</artifactId>
+		<scope>test</scope>
+	</dependency>
+
+	<plugin>
+		<groupId>org.apache.maven.plugins</groupId>
+		<artifactId>maven-dependency-plugin</artifactId>
+		<executions>
+			<execution>
+				<goals>
+					<goal>properties</goal>
+				</goals>
+			</execution>
+		</executions>
+	</plugin>
+
+	<!DOCTYPE HTML>
+	<head>
+		<title>Ght</title>
+	</head>
+	<body>
+		<a href="@{/login}">test</a>
+	</body>
+
+
+		<groupId>org.apache.maven.plugins</groupId>
+		<artifactId>maven-surefire-plugin</artifactId>
+		<configuration>
+			<argLine>@{argLine} -javaagent:${org.mockito:mockito-core:jar}</argLine>
+		</configuration>
+
+
+	java.lang.IllegalArgumentException: 'uriTemplate' must not be null
+	at org.springframework.util.Assert.hasText(Assert.java:168) ~[spring-core-4.3.1.RELEASE.jar:4.3.1.RELEASE]
+	at org.springframework.web.util.UriTemplate.<init> (UriTemplate.java:61) ~[spring-web-4.3.1.RELEASE.jar:4.3.1.RELEASE]
+		at org.springframework.hateoas.mvc.ControllerLinkBuilderFactory.linkTo(ControllerLinkBuilderFactory.java:134) ~[spring-hateoas-0.20.0.RELEASE.jar:na]
+		at org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo(ControllerLinkBuilder.java:172) ~[spring-hateoas-0.20.0.RELEASE.jar:na]
+
+	</project>
