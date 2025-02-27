@@ -3,7 +3,7 @@ package service;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CalculatorServicelmpl implements CalculatorService {
+public class CalculatorServiceImpl implements CalculatorService {
 
     public Integer sum(Integer num1, Integer num2) { return num1 + num2; }
 
